@@ -25,8 +25,8 @@ def draw_registration_result(source, target, transformation):
     o3d.visualization.draw_geometries([source_temp, target_temp])
 def prepare_dataset(voxel_size):
     print(":: Load two point clouds and disturb initial pose.")
-    source = o3d.io.read_point_cloud("./pcpair1/Depth_0000.ply")
-    target = o3d.io.read_point_cloud("./pcpair1/Depth_0001.ply")
+    source = o3d.io.read_point_cloud("./datasets/pcpair1/Depth_0000.ply")
+    target = o3d.io.read_point_cloud("./datasets/pcpair1/Depth_0001.ply")
     trans_init = np.asarray([[0.0, 0.0, 1.0, 0.0], [1.0, 0.0, 0.0, 0.0],
                              [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0]])
     source.transform(trans_init)
